@@ -1,0 +1,28 @@
+class solution{
+public:
+int findZeroes(int arr[], int n, int m) {
+        // code here
+        int st=0,en=0;
+        int ans=0;
+        int countzero=0;
+        while(en<n){
+            if(arr[en]==0){
+                countzero++;
+            }
+            if(countzero<=m){
+                ans=max(ans,en-st+1);
+                
+            }
+            while(countzero>m){
+                if(arr[st]==0){
+                    countzero--;
+                }
+                    st++;
+                
+            }
+            en++;
+            
+        }
+        return ans;
+    }  
+};
